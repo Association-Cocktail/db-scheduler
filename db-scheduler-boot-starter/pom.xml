@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>db-scheduler-spring-boot3-starter</artifactId>
+    <artifactId>db-scheduler-spring-boot-starter</artifactId>
     <name>db-scheduler: Spring Boot Starter</name>
     <description>A starter for Spring Boot 3.x that will configure db-scheduler</description>
     <url>https://github.com/kagkarlsson/db-scheduler</url>
