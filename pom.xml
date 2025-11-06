@@ -53,7 +53,8 @@
 
 	<modules>
 		<module>db-scheduler</module>
-		<module>db-scheduler-boot-starter</module>
+		<module>db-scheduler-spring-common</module>
+		<module>db-scheduler-spring-boot3-starter</module>
 		<module>examples</module>
 	</modules>
 
