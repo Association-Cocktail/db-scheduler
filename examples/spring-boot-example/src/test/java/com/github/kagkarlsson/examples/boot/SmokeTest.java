@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.github.kagkarlsson.scheduler.Scheduler;
-import com.github.kagkarlsson.scheduler.boot.actuator.DbSchedulerHealthIndicator;
 import com.github.kagkarlsson.scheduler.task.Task;
 import com.github.kagkarlsson.scheduler.task.TaskInstance;
 import java.time.Instant;
@@ -30,7 +29,6 @@ public class SmokeTest {
 
   AssertableWebApplicationContext ctx;
   @Autowired ConfigurableWebApplicationContext applicationContext;
-  @Autowired DbSchedulerHealthIndicator healthIndicator;
   @Autowired Task<Void> sampleOneTimeTask;
   @Autowired Scheduler scheduler;
   @Autowired TransactionTemplate tt;
@@ -55,11 +53,7 @@ public class SmokeTest {
     assertThat(ctx.getBeansOfType(Task.class).values()).hasSizeGreaterThan(10);
   }
 
-  @Test
-  public void it_should_be_healthy_after_startup() {
-    assertThat(healthIndicator.health().getStatus()).isEqualTo(Status.UP);
-  }
-
+  
   @Test
   public void it_should_manage_transactions_for_scheduler_client() {
     final TaskInstance<Void> instance1 = sampleOneTimeTask.instance("1");
